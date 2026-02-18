@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Tester</title>
-</head>
-<body>
- <h1>Test your API!</h1>
- <script>
-   const testRoute = async (url) => {
-     const response = await fetch(url)
-     const data = await response.json()
-     console.log('data:', data);
-   }
-   const url1 = 'https://api.artic.edu/api/v1/artworks/search?q=landscape&query[term][is_public_domain]=true&limit=100&fields=id,title,image_id,artwork_type_title';
-   const url2 = 'https://api.artic.edu/api/v1/artworks/129884';
-  
-   testRoute(url1);
-   testRoute(url2);
- </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mod-4-project</title>
+  </head>
+  <body>
+    <div id="app">
+      <section class="container">
+        <div class="card">
+          <p id="title"></p>
+          <img src="" alt="" id="image" />
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
 
