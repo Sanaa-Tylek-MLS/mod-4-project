@@ -1,8 +1,9 @@
 export const renderCollection = (data) => {
   console.log(data);
   
-  const app = document.getElementById("app");
-  app.innerHTML = "";
+  const app = document.querySelector("#app");
+  const container = document.querySelector(".container");
+  container.innerHTML = "";
 
   for (let i = 0; i < data.length; i++) {
     const imgID = data[i]["image_id"];
