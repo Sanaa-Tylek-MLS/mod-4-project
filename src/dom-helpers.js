@@ -1,9 +1,11 @@
-export const renderCollection = (data) => {
+export const renderCollection = (data, matches) => {
   console.log(data);
   
   const app = document.querySelector("#app");
   const container = document.querySelector(".container");
   container.innerHTML = "";
+
+  
 
   for (let i = 0; i < data.length; i++) {
     const imgID = data[i]["image_id"];
