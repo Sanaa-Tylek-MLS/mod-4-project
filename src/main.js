@@ -3,15 +3,14 @@ import { getCollection } from './fetch-helpers.js'
 import { renderCollection } from './dom-helpers.js';
 
 const submit = document.querySelector("#submit")
-const searched = document.querySelector(`#artSearch`).value
-let matches = []
-
+const searched = document.querySelector(`#artSearch`)
 
 getCollection().then((data) => {
   if (data === null) {
     console.log("failed to load")
   } else {
-    renderCollection(data.data.data, matches)
+    
+    renderCollection(data.data.data)
   }
 });
 
@@ -20,14 +19,12 @@ getCollection().then((data) => {
 submit.addEventListener(`click`, (event) => {
   event.preventDefault()
 
-
-  console.log(searched)
-
   getCollection().then((data) => {
   if (data === null) {
     console.log("failed to load")
   } else {
-    renderCollection(data.data.data, matches)
+    const matches = data.data.data.filter((item) => item.title.includes(searched.value));
+    renderCollection(matches)
   }
 });
 
