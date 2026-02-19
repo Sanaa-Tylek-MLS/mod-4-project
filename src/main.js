@@ -4,6 +4,7 @@ import { renderCollection, renderSingleItem } from './dom-helpers.js';
 
 const submit = document.querySelector("#submit")
 const searched = document.querySelector(`#artSearch`)
+const container = document.querySelector(".container")
 
 getCollection().then((data) => {
   if (data === null) {
@@ -27,5 +28,22 @@ submit.addEventListener(`click`, (event) => {
     renderCollection(matches)
   }
 });
+})
 
+container.addEventListener(`click`, (event) => {
+  const card = event.target.closest('.card')
+  // If nothing matching a card was clicked, stop here
+  if (!card) return
+
+  // Get the artwork id we saved on the card earlier
+  const id = card.dataset.id
+
+  // Fetch that one artwork and render it in the single item section
+  getSingleItem(id).then((result) => {
+    if (result.error) {
+      console.warn("Failed to load artwork", result.error)
+    } else {
+      renderSingleItem(result.data.data)
+    }
+  }); 
 })
