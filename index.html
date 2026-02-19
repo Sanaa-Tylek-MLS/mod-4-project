@@ -19,16 +19,29 @@
             <label for="artSearch">Art Title</label>
             <input type="text" id="artSearch" name="artSearch" required />
           </div>
-          <button type="submit" id="submit">Submit</button>
+          <button type="submit" id="submit">Search</button>
+          <button
+          type="filter"
+          id="filter">Fliter</button>
         </form>
       </section>
 
       <section class="container">
         <ul id="art-list">
-          <div class="card">
+          <li class="card">
             <p id="title"></p>
             <img src="" alt="" id="image" />
-          </div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Favorites</h2>
+        <ul id="favorites-list">
+          <li class="card">
+            <p id="title"></p>
+            <img src="" alt="" id="image" />
+          </li>
         </ul>
       </section>
 
@@ -41,6 +54,7 @@
           <p id="single-date"></p>
           <p id="single-description"></p>
         </div>
+        <button id="fav-btn">Add to Favorites</button>
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
