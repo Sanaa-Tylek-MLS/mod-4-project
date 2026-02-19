@@ -1,30 +1,28 @@
 export const renderCollection = (data) => {
   console.log(data);
-  
-  const app = document.querySelector("#app");
-  const container = document.querySelector(".container");
-  container.innerHTML = "";
-  
+
+  const list = document.querySelector("#art-list");
+  list.innerHTML = "";
+
   for (let i = 0; i < data.length; i++) {
     const imgID = data[i]["image_id"];
     const title = data[i]["title"];
 
-    const card = document.createElement("div");
-    card.classList.add("card");
-    // Sanaa: I added the artworks id on each card so the event listener can read it when aa user clicks the card
-    card.dataset.id = data[i]["id"];
-    
+    const li = document.createElement("li");   // <-- was "div"
+    li.classList.add("card");
+    li.dataset.id = data[i]["id"];
+
     const p = document.createElement("p");
     p.classList.add("title");
     p.textContent = title;
-    
+
     const img = document.createElement("img");
     img.src = `https://www.artic.edu/iiif/2/${imgID}/full/843,/0/default.jpg`;
     img.classList.add("image");
 
-    card.appendChild(p);
-    card.appendChild(img);
-    container.appendChild(card);
+    li.appendChild(p);
+    li.appendChild(img);
+    list.appendChild(li);
   }
 };
 

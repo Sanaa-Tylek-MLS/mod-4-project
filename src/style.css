@@ -43,6 +43,11 @@ h1 {
 }
 
 /* .logo {
+ul {
+  list-style-type: none;
+}
+
+.logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
