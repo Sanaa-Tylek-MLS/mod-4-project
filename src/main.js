@@ -62,8 +62,13 @@ container.addEventListener(`click`, (event) => {
     if (data === null) {
       console.log("failed to load");
     } else {
-      favoriteArtworks.push(data.data.data)
-      console.log(id)
+     
+      const clickedCard = data.data.data.filter((item) =>
+        item.id == id,
+      );
+
+      favoriteArtworks.push(clickedCard)
+      // console.log(clickedCard)
       localStorage.setItem("favorites", favoriteArtworks);
       console.log(localStorage.getItem("favorites"))
     }
