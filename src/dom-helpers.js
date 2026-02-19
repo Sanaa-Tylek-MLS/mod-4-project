@@ -27,7 +27,6 @@ export const renderCollection = (data) => {
 };
 
 export const renderSingleItem = (data) => {
-
   const title = document.querySelector('#single-title')
   title.textContent = data.title
 
