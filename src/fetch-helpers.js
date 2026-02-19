@@ -14,3 +14,18 @@ export const getCollection = async () => {
     return { data: null, error };
   }
 };
+
+export const getSingleItem = async (id) => {
+  try {
+    const response = await fetch(`https://api.artic.edu/api/v1/artworks/${id}`);
+
+    if (!response.ok) {
+      throw Error(`Fetch failed. ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return { data, error: null };
+  } catch (error) {
+    return { data: null, error };
+  }
+};
