@@ -1,6 +1,6 @@
 import './style.css'
-import { getCollection } from './fetch-helpers.js'
-import { renderCollection } from './dom-helpers.js';
+import { getCollection, getSingleItem } from './fetch-helpers.js'
+import { renderCollection, renderSingleItem } from './dom-helpers.js';
 
 const submit = document.querySelector("#submit")
 const searched = document.querySelector(`#artSearch`)
