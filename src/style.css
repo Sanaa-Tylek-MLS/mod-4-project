@@ -2,25 +2,14 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-} */
 
 body {
   margin: 0;
@@ -32,7 +21,6 @@ body {
 
 h1 {
   font-size: 3.2em;
-  /* line-height: 1.1; */
 }
 
 #app {
@@ -44,55 +32,43 @@ h1 {
 
 ul {
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;        
-  justify-content: center; 
-  height: 200px;
-  gap: 1rem;              
-  padding: 0;          
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* default: widescreen = 4 columns */
+  gap: 1rem;
+  padding: 0;
+  max-height: 500px;
   overflow-y: scroll;
   border: red solid 1px;
 }
 
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phone: 1 column */
+@media (max-width: 600px) {
+  ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .card {
-  width: 200px;
-  padding: 2rem;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .card img {
-  width: 100px;
+  width: 100%;
+  max-width: 200px;
 }
 
 .container {
   border: #1a1a1a;
 }
-/* li {
- 
-}  */
-
-/* .logo {
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-} */
-
-.card {
-  padding: 2em;
-}
-
-/* .read-the-docs {
-  color: #888;
-} */
 
 button {
   border-radius: 8px;
@@ -105,9 +81,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -129,5 +107,3 @@ button:focus-visible {
 .hidden {
   display: none;
 }
-
-
