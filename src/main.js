@@ -5,6 +5,7 @@ import { renderCollection, renderSingleItem, renderFavorites } from "./dom-helpe
 const submit = document.querySelector("#submit");
 const searched = document.querySelector(`#artSearch`);
 const container = document.querySelector(".container");
+const favoriteButton = document.querySelector("#fav-btn")
 
 // Load favorites from localStorage (parse the comma-separated string back into an array)
 let favoriteArtworks = localStorage.getItem("favorites")
@@ -52,19 +53,15 @@ container.addEventListener(`click`, (event) => {
   });
 });
 
-// Add to favorites on card click
-container.addEventListener(`click`, (event) => {
-  const card = event.target.closest(".card");
-  if (!card) return;
-  const id = card.dataset.id;
+favoriteButton.addEventListener("click", () => {
+  const singleCard = document.querySelector("#single-card");
+  const id = singleCard.dataset.id;
 
-  // Avoid duplicates
+  if (!id) return; // no item is open, do nothing
+
   if (!favoriteArtworks.includes(id)) {
     favoriteArtworks.push(id);
     localStorage.setItem("favorites", favoriteArtworks.join(","));
-    console.log("Favorites:", favoriteArtworks);
-
-    // Re-render the favorites section with the new addition
     renderFavorites(favoriteArtworks, getSingleItem);
   }
 });
