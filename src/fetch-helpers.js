@@ -15,6 +15,8 @@ export const getCollection = async () => {
   }
 };
 
+
+
 export const getSingleItem = async (id) => {
   try {
     const response = await fetch(`https://api.artic.edu/api/v1/artworks/${id}`);
