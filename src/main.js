@@ -6,7 +6,7 @@ const submit = document.querySelector("#submit");
 const searched = document.querySelector(`#artSearch`);
 const container = document.querySelector(".container");
 
-let favoriteArtworks = []
+let favoriteArtworks = [];
 
 getCollection().then((data) => {
   if (data === null) {
@@ -62,15 +62,17 @@ container.addEventListener(`click`, (event) => {
     if (data === null) {
       console.log("failed to load");
     } else {
-     
-      const clickedCard = data.data.data.filter((item) =>
-        item.id == id,
-      );
+      // const clickedCard = data.data.data.filter((item) =>
+      //   item.id == id,
+      // );
 
-      favoriteArtworks.push(clickedCard)
+      const clickedCard = favoriteArtworks.filter((item) => item != id);
+      console.log(clickedCard)
+
+      favoriteArtworks.push(id);
       // console.log(clickedCard)
       localStorage.setItem("favorites", favoriteArtworks);
-      console.log(localStorage.getItem("favorites"))
+      console.log(localStorage.getItem("favorites"));
     }
   });
 });
