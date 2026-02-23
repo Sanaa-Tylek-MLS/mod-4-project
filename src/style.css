@@ -44,7 +44,31 @@ h1 {
 
 ul {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;        
+  justify-content: center; 
+  height: 200px;
+  gap: 1rem;              
+  padding: 0;          
+  overflow-y: scroll;
+  border: red solid 1px;
 }
+
+.card {
+  width: 200px;
+  padding: 2rem;
+}
+
+.card img {
+  width: 100px;
+}
+
+.container {
+  border: #1a1a1a;
+}
+/* li {
+ 
+}  */
 
 /* .logo {
 
