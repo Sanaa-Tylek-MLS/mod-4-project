@@ -47,3 +47,6 @@ container.addEventListener(`click`, (event) => {
     }
   }); 
 })
+// Things for me to add
+// Add event listener for Add Favorites button and close button
+// Add event listener for single cards

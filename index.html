@@ -19,28 +19,42 @@
             <label for="artSearch">Art Title</label>
             <input type="text" id="artSearch" name="artSearch" required />
           </div>
-          <button type="submit" id="submit">Submit</button>
+          <button type="submit" id="submit">Search</button>
+          <button
+          type="filter"
+          id="filter">Fliter</button>
         </form>
       </section>
 
       <section class="container">
         <ul id="art-list">
-          <div class="card">
+          <li class="card">
             <p id="title"></p>
             <img src="" alt="" id="image" />
-          </div>
+          </li>
         </ul>
       </section>
 
-      <section id="single-card" class="hidden">
+      <section>
+        <h2>Favorites</h2>
+        <ul id="favorites-list">
+          <li class="card">
+            <p id="title"></p>
+            <img src="" alt="" id="image" />
+          </li>
+        </ul>
+      </section>
+
+      <section id="single-card">
         <button id="close-btn">X</button>
-        <h1 id="single-title"></h1>
-        <h2 id="single-artist"></h2>
+        <h2 id="single-title"></h2>
+        <p id="single-artist"></p>
         <img id="single-image" src="" alt="" />
         <div id="single-info">
           <p id="single-date"></p>
           <p id="single-description"></p>
         </div>
+        <button id="fav-btn">Add to Favorites</button>
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
