@@ -1,133 +1,221 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* === Google Font === */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-} */
-
+/* === Base styles (mobile first) === */
 body {
+  font-family: 'ABeeZee', sans-serif;
+  background-color: #242424;
+  color: #efefef;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 1rem;
 }
 
 h1 {
-  font-size: 3.2em;
-  /* line-height: 1.1; */
+  text-align: center;
+  font-size: 2rem;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+h2 {
+  font-size: 1.2rem;
+}
+
+/* === Search form === */
+.form-container {
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
+.form-container form {
   display: flex;
-  flex-wrap: wrap;        
-  justify-content: center; 
-  height: 200px;
-  gap: 1rem;              
-  padding: 0;          
-  overflow-y: scroll;
-  border: red solid 1px;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-.card {
-  width: 200px;
-  padding: 2rem;
-}
-
-.card img {
-  width: 100px;
-}
-
-.container {
-  border: #1a1a1a;
-}
-/* li {
- 
-}  */
-
-/* .logo {
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-} */
-
-.card {
-  padding: 2em;
-}
-
-/* .read-the-docs {
-  color: #888;
-} */
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
+.form-container input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #888;
   background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  color: #efefef;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 250px;
 }
+
+/* === Main layout (stacked on mobile) === */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* === Favorites section === */
+.favorites-container {
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 100px;
+}
+
+#favorites-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fav-item {
+  padding: 0.4rem;
+  border: 1px solid #555;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* === Artworks section === */
+.container {
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+#art-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* === Art cards === */
+.card {
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 0.5rem;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card .title {
+  font-size: 0.8rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-btns {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.card-btns .expand-btn {
+  flex: 1;
+}
+
+/* === Buttons === */
+button {
+  font-family: 'ABeeZee', sans-serif;
+  background-color: #1a1a1a;
+  color: #efefef;
+  border: 1px solid #888;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+/* === Overlay === */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* === Single item card (inside overlay) === */
+#single-card {
+  background: #2a2a2a;
+  border: 2px solid #777;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 85vh;
+  overflow-y: auto
 }
 
+#single-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* === Hidden === */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
+/* === Media query 1: Tablet (600px and up) === */
+@media (min-width: 600px) {
+  .form-container form {
+    flex-direction: row;
+    justify-content: center;
+  }
 
+  .form-container input {
+    width: auto;
+  }
+
+  #art-list {
+    justify-content: flex-start;
+  }
+}
+
+/* === Media query 2: Desktop (900px and up) === */
+@media (min-width: 900px) {
+  .main-layout {
+    flex-direction: row;   /* favorites and artworks side by side */
+    align-items: flex-start;
+  }
+
+  .favorites-container {
+    width: 200px;
+    flex-shrink: 0;
+    min-height: 400px;
+  }
+
+  .container {
+    flex: 1;
+  }
+}
