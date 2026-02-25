@@ -1,6 +1,6 @@
 import './style.css'
 import { getCollection, getSingleItem } from './fetch-helpers.js'
-import { renderCollection, renderSingleItem } from './dom-helpers.js';
+import { renderCollection, renderSingleItem, addToFavorites } from './dom-helpers.js';
 
 const submit = document.querySelector("#submit")
 const searched = document.querySelector(`#artSearch`)
@@ -10,12 +10,11 @@ const closeBtn = document.querySelector("#close-btn")
 
 let favorites = []
 
-getCollection().then((data) => {
-  if (data === null) {
-    console.log("failed to load")
+getCollection().then((result) => {
+  if (result.error) {                  
+    console.warn("failed to load", result.error)
   } else {
-    
-    renderCollection(data.data.data)
+    renderCollection(result.data.data)
   }
 });
 
@@ -24,36 +23,44 @@ getCollection().then((data) => {
 submit.addEventListener(`click`, (event) => {
   event.preventDefault()
 
-  getCollection().then((data) => {
-  if (data === null) {
-    console.log("failed to load")
+  getCollection().then((result) => {
+  if (result.error) {                    
+    console.warn("failed to load", result.error)
   } else {
-    const matches = data.data.data.filter((item) => item.title.includes(searched.value));
+    const matches = result.data.data.filter((item) => item.title.includes(searched.value));
     renderCollection(matches)
+    searched.value = "" 
   }
 });
 })
 
 container.addEventListener(`click`, (event) => {
-  const card = event.target.closest('.card')
-  // If nothing matching a card was clicked, stop here
-  if (!card) return
+  if (event.target.classList.contains('expand-btn')) {
+    const id = event.target.dataset.id
 
-  // Get the artwork id we saved on the card earlier
-  const id = card.dataset.id
+    getSingleItem(id).then((result) => {
+      if (result.error) {
+        console.warn("Failed to load artwork", result.error)
+      } else {
+        renderSingleItem(result.data.data)
+        overlay.classList.remove('hidden')
+      }
+    });
+    return
+  }
+  if (event.target.classList.contains('fav-btn')) {
+    const id = event.target.dataset.id
+    const title = event.target.dataset.title
 
-  // Fetch that one artwork and render it in the single item section
-  getSingleItem(id).then((result) => {
-    if (result.error) {
-      console.warn("Failed to load artwork", result.error)
-    } else {
-      renderSingleItem(result.data.data)
+    const alreadyAdded = favorites.some((fav) => fav.id === id)
+    if (!alreadyAdded) {
+      favorites.push({ id, title })
+      addToFavorites(favorites)
     }
-  }); 
+    return
+  }
 })
 
-
-
 closeBtn.addEventListener(`click`, () => {
-  modalOverlay.classList.add('hidden')
+  overlay.classList.add('hidden')
 })

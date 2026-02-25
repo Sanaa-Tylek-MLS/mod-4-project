@@ -8,6 +8,8 @@ export const renderCollection = (data) => {
     const imgID = data[i]["image_id"];
     const title = data[i]["title"];
 
+    if (!imgID) continue;
+
     const li = document.createElement("li");   // <-- was "div"
     li.classList.add("card");
     li.dataset.id = data[i]["id"];
@@ -19,6 +21,7 @@ export const renderCollection = (data) => {
     const img = document.createElement("img");
     img.src = `https://www.artic.edu/iiif/2/${imgID}/full/843,/0/default.jpg`;
     img.classList.add("image");
+    img.alt = title
 
     // I added: buttons at the bottom of each card
     const btnRow = document.createElement("div");
@@ -40,8 +43,9 @@ export const renderCollection = (data) => {
 
     li.appendChild(p);
     li.appendChild(img);
-    list.appendChild(li);
     li.appendChild(btnRow);  // Added
+    list.appendChild(li);
+
   }
 };
 
@@ -67,12 +71,12 @@ export const renderSingleItem = (data) => {
 // Adds an artwork to favortites
 export const addToFavorites = (favorites) => {
   const favList = document.querySelector('#favorites-list')
-  list.innerHTML = "";
+  favList.innerHTML = "";
 
   for (let i = 0; i < favorites.length; i++) {
     const li = document.createElement("li");
     li.classList.add("fav-item");
     li.textContent = favorites[i].title;
-    list.appendChild(li);
+    favList.appendChild(li);
   }
 }

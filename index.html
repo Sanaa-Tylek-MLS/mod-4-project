@@ -12,36 +12,38 @@
       <h1>Artview 🔍</h1>
       <section class="form-container">
         <h2>Search for artworks:</h2>
-        <form action="#" method="POST">
+        
+        <form aria-label="Search for artworks by keyword" action="#" method="POST">
           <div class="form-group">
             <label for="artSearch">keyword:</label>
             <input type="text" id="artSearch" name="artSearch" required/>
           </div>
-          <button type="submit" id="submit">Search</button>
-          <button
+          <button type="submit" id="submit">search</button>
+          <!-- <button
           type="filter"
-          id="filter">Fliter</button>
+          id="filter">Fliter</button> -->
         </form>
       </section>
       
       <div class="main-layout">
         
-        <section>
+        <section class="favorites-container">
           <h2>Favorites ★</h2>
           <ul id="favorites-list">
-            <li class="card">
+            <!-- <li class="card">
               <p id="title"></p>
               <img src="" alt="" id="image" />
-            </li>
+            </li> -->
         </ul>
         </section>
 
       <section class="container">
+        <h2>Artworks</h2>
         <ul id="art-list">
-          <li class="card">
+          <!-- <li class="card">
             <p id="title"></p>
             <img src="" alt="" id="image" />
-          </li>
+          </li> -->
         </ul>
       </section>
 
@@ -49,14 +51,13 @@
 
       <div id="overlay" class="hidden">
       <section id="single-card">
-        <button id="close-btn">X</button>
-        <h2 id="single-title"></h2>
+        <h2>Details</h2>
+        <p id="single-title"></p>
         <p id="single-artist"></p>
         <img id="single-image" src="" alt="" />
-        <div id="single-info">
-          <p id="single-date"></p>
-          <p id="single-description"></p>
-        </div>
+        <p id="single-date"></p>
+        <p id="single-description"></p>
+        <button id="close-btn">X</button>
       </section>
       </div>
 
