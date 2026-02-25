@@ -2,22 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArtView</title>
   </head>
   <body>
-    
 
     <main id="app">
 
-      <h1>Artview</h1>
+      <h1>Artview 🔍</h1>
       <section class="form-container">
-        <h2>Search for art</h2>
+        <h2>Search for artworks:</h2>
         <form action="#" method="POST">
           <div class="form-group">
-            <label for="artSearch">Art Title</label>
-            <input type="text" id="artSearch" name="artSearch" required />
+            <label for="artSearch">keyword:</label>
+            <input type="text" id="artSearch" name="artSearch" required/>
           </div>
           <button type="submit" id="submit">Search</button>
           <button
@@ -25,6 +23,18 @@
           id="filter">Fliter</button>
         </form>
       </section>
+      
+      <div class="main-layout">
+        
+        <section>
+          <h2>Favorites ★</h2>
+          <ul id="favorites-list">
+            <li class="card">
+              <p id="title"></p>
+              <img src="" alt="" id="image" />
+            </li>
+        </ul>
+        </section>
 
       <section class="container">
         <ul id="art-list">
@@ -35,16 +45,9 @@
         </ul>
       </section>
 
-      <section>
-        <h2>Favorites</h2>
-        <ul id="favorites-list">
-          <li class="card">
-            <p id="title"></p>
-            <img src="" alt="" id="image" />
-          </li>
-        </ul>
-      </section>
+      </div>
 
+      <div id="overlay" class="hidden">
       <section id="single-card">
         <button id="close-btn">X</button>
         <h2 id="single-title"></h2>
@@ -54,8 +57,9 @@
           <p id="single-date"></p>
           <p id="single-description"></p>
         </div>
-        <button id="fav-btn">Add to Favorites</button>
       </section>
+      </div>
+
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>

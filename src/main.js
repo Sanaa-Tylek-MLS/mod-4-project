@@ -5,6 +5,10 @@ import { renderCollection, renderSingleItem } from './dom-helpers.js';
 const submit = document.querySelector("#submit")
 const searched = document.querySelector(`#artSearch`)
 const container = document.querySelector(".container")
+const overlay = document.querySelector("#overlay")
+const closeBtn = document.querySelector("#close-btn")
+
+let favorites = []
 
 getCollection().then((data) => {
   if (data === null) {
@@ -47,6 +51,9 @@ container.addEventListener(`click`, (event) => {
     }
   }); 
 })
-// Things for me to add
-// Add event listener for Add Favorites button and close button
-// Add event listener for single cards
+
+
+
+closeBtn.addEventListener(`click`, () => {
+  modalOverlay.classList.add('hidden')
+})
