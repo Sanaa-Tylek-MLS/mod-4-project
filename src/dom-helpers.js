@@ -68,15 +68,27 @@ export const renderSingleItem = (data) => {
   description.textContent = data.short_description
 }
 
-// Adds an artwork to favortites
+// Adds an artwork to favorites and persists to localStorage
 export const addToFavorites = (favorites) => {
-  const favList = document.querySelector('#favorites-list')
-  favList.innerHTML = "";
+  localStorage.setItem('favorites', JSON.stringify(favorites));
 
+  const favList = document.querySelector('#favorites-list');
+  favList.innerHTML = "";
   for (let i = 0; i < favorites.length; i++) {
     const li = document.createElement("li");
     li.classList.add("fav-item");
     li.textContent = favorites[i].title;
     favList.appendChild(li);
   }
+}
+
+// Call this on page load to restore favorites from localStorage
+export const loadFavorites = () => {
+  const stored = localStorage.getItem('favorites');
+  if (stored) {
+    const favorites = JSON.parse(stored);
+    addToFavorites(favorites);
+    return favorites;
+  }
+  return [];
 }

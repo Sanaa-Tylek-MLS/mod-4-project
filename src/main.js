@@ -1,6 +1,6 @@
 import './style.css'
 import { getCollection, getSingleItem } from './fetch-helpers.js'
-import { renderCollection, renderSingleItem, addToFavorites } from './dom-helpers.js';
+import { renderCollection, renderSingleItem, addToFavorites, loadFavorites } from './dom-helpers.js';
 
 const submit = document.querySelector("#submit")
 const searched = document.querySelector(`#artSearch`)
@@ -8,7 +8,7 @@ const container = document.querySelector(".container")
 const overlay = document.querySelector("#overlay")
 const closeBtn = document.querySelector("#close-btn")
 
-let favorites = []
+let favorites = loadFavorites(); 
 
 getCollection().then((result) => {
   if (result.error) {                  
