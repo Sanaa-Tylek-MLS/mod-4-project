@@ -57,7 +57,8 @@ npm run dev
 - Claude.Ai
 
 ## Usage/Demo
-(demo through screenshots or screenshot of application)
+![Search feature screenshot](/Users/Marcy_Student/Development/mod-4/mod-4-project/src/imgs/search.png)
+
 <!-- Comment which option I should do for the usage section @Tylek -->
 <!-- [Doing this after I fix part of the code so favorites can be removed] -->
 ## Known Limitations and Future Improvements
