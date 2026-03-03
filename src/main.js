@@ -51,10 +51,11 @@ container.addEventListener(`click`, (event) => {
   if (event.target.classList.contains('fav-btn')) {
     const id = event.target.dataset.id
     const title = event.target.dataset.title
+    const img = event.target.dataset.image
 
-    const alreadyAdded = favorites.some((fav) => fav.id === id)
+    const alreadyAdded = favorites.some((fav) => fav.id == id)
     if (!alreadyAdded) {
-      favorites.push({ id, title })
+      favorites.push({ id, title, img })
       addToFavorites(favorites)
     }
     return

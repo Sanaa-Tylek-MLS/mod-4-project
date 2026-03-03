@@ -37,6 +37,7 @@ export const renderCollection = (data) => {
     favBtn.textContent = "★";
     favBtn.dataset.id = data[i]["id"];
     favBtn.dataset.title = title;
+    favBtn.dataset.image = imgID;
 
     btnRow.appendChild(expandBtn);
     btnRow.appendChild(favBtn);
