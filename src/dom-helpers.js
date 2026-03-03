@@ -59,13 +59,13 @@ export const renderSingleItem = (data) => {
   img.alt = data.alt_text
 
   const artist = document.querySelector('#single-artist')
-  artist.textContent = data.artist_title
+  artist.textContent = `Artist: ${data.artist_title}`
 
   const date = document.querySelector('#single-date')
-  date.textContent = data.date_display
+  date.textContent = `Date made: ${data.date_display}`
 
   const description = document.querySelector('#single-description')
-  description.textContent = data.short_description
+  description.textContent = `Blurb: ${data.short_description}`
 }
 
 // Adds an artwork to favorites and persists to localStorage
