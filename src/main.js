@@ -25,7 +25,7 @@ submit.addEventListener(`click`, (event) => {
 
   getCollection().then((result) => {
   if (result.error) {                    
-    console.warn("failed to load", result.error)
+    console.warn("Failed to load artwork", result.error)
   } else {
     const matches = result.data.data.filter((item) => item.title.includes(searched.value));
     renderCollection(matches)
