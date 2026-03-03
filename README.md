@@ -63,16 +63,22 @@ Below is a walkthrough of Artview's core features.
 **<details><summary>Search</summary>**
 
 ![Search feature — type a keyword to browse matching artworks from the Chicago Museum of Art](./src/imgs/search.png)
+
+Type a keyword into the search bar to browse matching artworks from the Chicago Museum of Art
 </details>
 
 **<details><summary>Artwork Detail Overlay</summary>**
 
 ![Clicking expand opens a detail overlay with the artwork's title, artist, date, and description](./src/imgs/overlay.png)
+
+Clicking expand opens a detail overlay with the artwork's title, artist, date, and description
 </details>
 
 **<details><summary>Favorites</summary>**
 
 ![Clicking the star button saves an artwork to the Favorites section on the left](./src/imgs/fav.png)
+
+Clicking the star button saves an artwork to the Favorites section on the left
 </details>
 
 ## Known Limitations and Future Improvements
