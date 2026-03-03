@@ -62,7 +62,7 @@ export const renderSingleItem = (data) => {
   artist.textContent = `Artist: ${data.artist_title}`
 
   const date = document.querySelector('#single-date')
-  date.textContent = `Date made: ${data.date_display}`
+  date.textContent = `Date: ${data.date_display}`
 
   const description = document.querySelector('#single-description')
   description.textContent = `Blurb: ${data.short_description}`
