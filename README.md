@@ -57,10 +57,24 @@ npm run dev
 - Claude.Ai
 
 ## Usage/Demo
-![Search feature screenshot](/Users/Marcy_Student/Development/mod-4/mod-4-project/src/imgs/search.png)
 
-<!-- Comment which option I should do for the usage section @Tylek -->
-<!-- [Doing this after I fix part of the code so favorites can be removed] -->
+Below is a walkthrough of Artview's core features.
+
+**<details><summary>Search</summary>**
+
+![Search feature — type a keyword to browse matching artworks from the Chicago Museum of Art](./src/imgs/search.png)
+</details>
+
+**<details><summary>Artwork Detail Overlay</summary>**
+
+![Clicking expand opens a detail overlay with the artwork's title, artist, date, and description](./src/imgs/overlay.png)
+</details>
+
+**<details><summary>Favorites</summary>**
+
+![Clicking the star button saves an artwork to the Favorites section on the left](./src/imgs/fav.png)
+</details>
+
 ## Known Limitations and Future Improvements
 
 **Known limitations:**
