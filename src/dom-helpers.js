@@ -78,7 +78,12 @@ export const addToFavorites = (favorites) => {
   for (let i = 0; i < favorites.length; i++) {
     const li = document.createElement("li");
     li.classList.add("fav-item");
+    const img = document.createElement("img");
+    img.src = `https://www.artic.edu/iiif/2/${favorites[i].img}/full/843,/0/default.jpg`;
+    img.alt = favorites[i].title;
     li.textContent = favorites[i].title;
+    img.classList.add("fav-img");
+    li.appendChild(img);
     favList.appendChild(li);
   }
 }
