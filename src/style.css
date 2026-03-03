@@ -21,7 +21,7 @@ h2 {
 
 /* === Search form === */
 .form-container {
-  border: 2px solid #555;
+  border: 3px solid #555;
   border-radius: 12px;
   padding: 1rem;
   max-width: 400px;
@@ -56,10 +56,11 @@ h2 {
 
 /* === Favorites section === */
 .favorites-container {
-  border: 2px solid #555;
+  border: 3px solid #555;
   border-radius: 12px;
   padding: 1rem;
   min-height: 100px;
+  min-width: 300px;
 }
 
 #favorites-list {
@@ -80,7 +81,7 @@ h2 {
 
 /* === Artworks section === */
 .container {
-  border: 2px solid #555;
+  border: 3px solid #555;
   border-radius: 12px;
   padding: 1rem;
 }
@@ -98,7 +99,7 @@ h2 {
 
 /* === Art cards === */
 .card {
-  border: 2px solid #555;
+  border: 3px solid #555;
   border-radius: 12px;
   padding: 0.5rem;
   width: 140px;
@@ -136,7 +137,7 @@ button {
   font-family: 'ABeeZee', sans-serif;
   background-color: #1a1a1a;
   color: #efefef;
-  border: 1px solid #888;
+  border: 1.9px solid #888;
   border-radius: 6px;
   padding: 0.4rem 0.7rem;
   font-size: 0.9rem;
@@ -164,7 +165,7 @@ button:hover {
 /* === Single item card (inside overlay) === */
 #single-card {
   background: #2a2a2a;
-  border: 2px solid #777;
+  border: 3px solid #777;
   border-radius: 16px;
   padding: 1.5rem;
   width: 90%;
