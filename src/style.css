@@ -166,7 +166,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,7 +176,7 @@ button:hover {
 /* === Single item card (inside overlay) === */
 #single-card {
   background: #2a2a2a;
-  border: 3px solid #777;
+  border: 2px solid #555;
   border-radius: 16px;
   padding: 1.5rem;
   width: 90%;
@@ -195,7 +195,9 @@ button:hover {
 
 #close-btn {
   font-family:'ABeeZee', sans-serif;
+  font-weight: bold;
   width: 35px;
+  border: 2px solid #555;
 }
 
 /* === Hidden === */
